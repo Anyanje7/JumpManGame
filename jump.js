@@ -1,4 +1,4 @@
-var spriteXpos=500;
+ var spriteXpos=500;
 var spriteYpos=350;
 var speedX= 3;
 var speedX2= 2;
@@ -6,6 +6,7 @@ var speedX3=4;
 var spriteXpos3 = 80;
 var spriteXpos2 = spriteXpos- 80;
 var spritedist;
+var sprite2YPos=20;
 function setup (){
   createCanvas(1000,850);
   bg = loadImage("Images/jumpwall.png");
@@ -15,12 +16,18 @@ function setup (){
 function draw(){
   background(bg);
   image(sprite1,spriteXpos,spriteYpos,100,210);
-  image(sprite2,spriteXpos,spriteYpos,50,200);
-//  for(var spriteXpos=10; spriteXpos<width; spriteXpos=spriteXpos+300){
+  image(sprite2,0,sprite2YPos,50,200);
+    if(keyIsDown(UP_ARROW)){
+      sprite2YPos -=5;
+    }
+    if(keyIsDown(DOWN_ARROW)){
+      sprite2YPos +=5;
+    }
+
   image(sprite1,spriteXpos,spriteYpos,100,210);
     image(sprite1,spriteXpos2,spriteYpos,100,210);
     image(sprite1,spriteXpos3,spriteYpos,100,210);
-  //}
+
     spriteXpos3 =spriteXpos3 -speedX3;
    spriteXpos2 =spriteXpos2 -speedX;
    spriteXpos=spriteXpos -speedX2;
