@@ -8,7 +8,7 @@ var spriteXpos2 = spriteXpos- 80;
 var spritedist;
 var sprite2YPos=20;
 function setup (){
-  createCanvas(1000,850);
+  createCanvas(1000,600);
   bg = loadImage("Images/jumpwall.png");
   sprite1=loadImage("Images/brickSprite.png")
   sprite2 =loadImage("Images/jumperrh.png.png")
