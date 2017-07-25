@@ -1,4 +1,4 @@
- var spriteXpos=500;
+var spriteXpos=500;
 var spriteYpos=350;
 var speedX= 6;
 var speedX2= 4;
@@ -8,6 +8,8 @@ var spriteXpos2 = spriteXpos- 80;
 var spritedist;
 var sprite2YPos=300;
 var sprite2XPos=0;
+//var upspeed = 5;
+var score=0;
 function setup (){
   createCanvas(1000,600);
   bg = loadImage("Images/jumpwall.png");
@@ -16,14 +18,15 @@ function setup (){
 }
 function draw(){
   background(bg);
-  image(sprite1,spriteXpos,spriteYpos,50,100);
-  image(sprite2,sprite2XPos,sprite2YPos,50,150);
-    if(keyIsDown(UP_ARROW)){
-      sprite2YPos -=5;
-      if(sprite2YPos==150){
-        sprite2YPos=300;
-      }
+  image(sprite1,spriteXpos,spriteYpos,50,50);
+  image(sprite2,sprite2XPos,sprite2YPos,50,100);
+
+    if(keyIsDown(UP_ARROW) ){
+      sprite2YPos -=100;
+
     }
+
+//}
     if(keyIsDown(RIGHT_ARROW)){
       sprite2XPos +=5;
 }
@@ -33,9 +36,9 @@ if(keyIsDown(LEFT_ARROW)){
 if(keyIsDown(DOWN_ARROW)){
   sprite2YPos +=5;
 }
-  image(sprite1,spriteXpos,spriteYpos,50,100);
-    image(sprite1,spriteXpos2,spriteYpos,50,100);
-    image(sprite1,spriteXpos3,spriteYpos,50,100);
+  image(sprite1,spriteXpos,spriteYpos,50,50);
+    image(sprite1,spriteXpos2,spriteYpos,50,50);
+    image(sprite1,spriteXpos3,spriteYpos,50,50);
 
     spriteXpos3 =spriteXpos3 -speedX3;
    spriteXpos2 =spriteXpos2 -speedX;
@@ -54,5 +57,12 @@ if(keyIsDown(DOWN_ARROW)){
        spriteXpos = spriteXpos - 10;
        //spriteXpos3 = spriteXpos3 -10;
  }
+if (frameCount % 3 == 0){
+ if(sprite2YPos <=200){
+      sprite2YPos +=100 ;
+    }
+}
+console.log(sprite2YPos);
+//text("score" 20,580);
 
 }
