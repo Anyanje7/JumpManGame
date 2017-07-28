@@ -87,6 +87,10 @@ text("lifes: " + life, 830,90);
     life=life;
     clear();
     background(255,0,0);
-    score=score;
   }
+  if (key == 'p'){
+    confirm('Game Paused press ok to continue');
+  }
+textSize(30);
+fill()
 }
